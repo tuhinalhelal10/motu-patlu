@@ -182,34 +182,44 @@ function navHighlighter()
 
 //  ================================== Frome submit =====================================
 
-function send(){
+function Send(){
 
-    let name = document.getElementsByClassName("name").value;
-    let email = document.getElementsByClassName("email").value;
-    let phone = document.getElementsByClassName("phone").value;
-    let message = document.getElementsByClassName("message").value;
+    // let name = document.getElementsByClassName("name").value;
+    // let email = document.getElementsByClassName("email").value;
+    // let phone = document.getElementsByClassName("phone").value;
+    // let message = document.getElementsByClassName("message").value;
 
-    let body = "Name :" + name + "<br/> Email :" + email + "<br/> Email :" + phone + "<br/> Email :" + message;
-    console.log(body)
+    // let body = "Name :" + name + "<br/> Email :" + email + "<br/> Email :" + phone + "<br/> Email :" + message;
 
-    email.send({
 
-        Host : "smtp.elasticemail.com",
-        Username : "mdtuhinhelal20@gmail.ocm",
-        Password : "5056601F0F138902A36EC431FCC074D857FB",
-        To : 'mdtuhinhelal21@gmail.com',
-        From : "mdtuhinhelal20@gmail.ocm",
-        Subject : "This is the subject",
-        Body : body
-    }).then(
-      message => {
-        if(message == 'OK'){
-            swal("Successfull", "Your Data Successfully Received", "success");
-        }
-        else{
-            swal("Someting Wrong", "Your Data is not Received", "error"); 
-        }
-      }
-    );
+        // const Name = document.querySelector("#name").value;
+        // const Email = document.querySelector("#email").value;
+        // const Phone = document.querySelector("#number").value;
+        // const Message = document.querySelector("#message").value;
+        // const body = "Name :" + Name + "<br/>"+" Email :" + Email + "<br/>"+" Phone :" + Phone + "<br/>"+" Message :" + Message;
+
+        let name = document.querySelector('#name').value;
+        let email = document.querySelector('#email').value;
+        let number = document.querySelector('#number').value;
+        let message = document.querySelector('#message').value;
+        let body = "Name :" + name + "<br/> Email :" + email + "<br/> Phone No :" + number  + "<br/>Message:" + message;
+        console.log(body)
+
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "mdtuhinhelal21@gmail.com",
+            Password : "07E2A25F729D704336FFBA73BA92B36AADAC",
+            To : 'mdtuhinhelal21@gmail.com',
+            From : "mdtuhinhelal21@gmail.com",
+            Subject : "This is the subject",
+            Body : body
+        }).then(
+        message => {
+                if(message == 'OK'){
+                    swal("Successfull", "Your Data Successfully Received", "success");
+                }
+                else{
+                    swal("Someting Wrong", "Your Data is not Received", "error"); 
+                }});
 }
     
